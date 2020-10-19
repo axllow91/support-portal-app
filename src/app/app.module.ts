@@ -1,3 +1,4 @@
+import { AuthenticationGuard } from './guard/authentication.guard';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { UserService } from './service/user/user.service';
 import { AuthenticationService } from './service/authentication/authentication.service';
@@ -15,6 +16,7 @@ import { AppComponent } from './app.component';
     AuthenticationService,
     UserService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    AuthenticationGuard,
   ],
   bootstrap: [AppComponent],
 })
