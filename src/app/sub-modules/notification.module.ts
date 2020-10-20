@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NotifierOptions } from 'angular-notifier/lib/models/notifier-config.model';
-import { NotifierModule } from 'angular-notifier/lib/notifier.module';
-
+import { NotifierModule, NotifierOptions } from 'angular-notifier';
 
 const customNotifierOptions: NotifierOptions = {
   position: {

@@ -1,4 +1,4 @@
-import { NotificationModule } from './notification.module';
+import { NotificationModule } from './sub-modules/notification.module';
 import { AuthenticationGuard } from './guard/authentication.guard';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { UserService } from './service/user/user.service';
@@ -7,7 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './sub-modules/app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
