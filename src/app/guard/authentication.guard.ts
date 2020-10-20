@@ -1,3 +1,4 @@
+import { NotificationService } from './../service/notification.service';
 import { AuthenticationService } from './../service/authentication/authentication.service';
 import { Injectable } from '@angular/core';
 import {
@@ -7,6 +8,7 @@ import {
   UrlTree,
   Router,
 } from '@angular/router';
+import { NotificationType } from 'src/enum/notification-type.enum';
 
 // Guard to determine if we let them access it or not
 
@@ -16,7 +18,8 @@ import {
 export class AuthenticationGuard implements CanActivate {
   constructor(
     private authenticationService: AuthenticationService,
-    private router: Router
+    private router: Router,
+    private notificationService: NotificationService
   ) {}
 
   canActivate(
@@ -32,7 +35,10 @@ export class AuthenticationGuard implements CanActivate {
       return true;
     }
     this.router.navigate(['/login']);
-
+    this.notificationService.notify(
+      NotificationType.ERROR,
+      'You need to log in to access this page'.toUpperCase()
+    );
     // TODO - send notification to user
 
     return false;

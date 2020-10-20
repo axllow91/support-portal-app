@@ -1,3 +1,4 @@
+import { NotificationModule } from './notification.module';
 import { AuthenticationGuard } from './guard/authentication.guard';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { UserService } from './service/user/user.service';
@@ -11,7 +12,12 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NotificationModule,
+  ],
   providers: [
     AuthenticationService,
     UserService,
