@@ -1,6 +1,7 @@
-export interface CustomHttpResponse {
-    httpStatusCode: number;
-    httpStatus: string;
-    reason: string;
-    message: string;
+export interface CustomHtppResponse {
+  httpStatusCode: number;
+  httpStatus: string;
+  reson: string;
+  message: string;
+
 }

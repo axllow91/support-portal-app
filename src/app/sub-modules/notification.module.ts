@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
 
 const customNotifierOptions: NotifierOptions = {
@@ -43,10 +44,7 @@ const customNotifierOptions: NotifierOptions = {
 };
 
 @NgModule({
-    imports:[NotifierModule.withConfig(customNotifierOptions)],
-    exports:[NotifierModule]
+  imports: [NotifierModule.withConfig(customNotifierOptions), FormsModule],
+  exports: [NotifierModule],
 })
-
-export class NotificationModule {
-    
-}
+export class NotificationModule {}

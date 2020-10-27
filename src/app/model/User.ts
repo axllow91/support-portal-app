@@ -28,4 +28,5 @@ export class User {
     this.role = '';
     this.authorities = [];
   }
+
 }
